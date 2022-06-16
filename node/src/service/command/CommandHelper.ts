@@ -1,4 +1,5 @@
 import {MessageResponse} from "~/types/MessageResponse";
+import {MessageRequest} from "~/types/MessageRequest";
 
 export class CommandHelper {
 
@@ -8,8 +9,14 @@ export class CommandHelper {
         return fullCommand.split(' ');
     }
 
-    static validationError(errors: string[]): MessageResponse {
-        return null as unknown as MessageResponse;
+    static validationError(errors: string[], messageRequest: MessageRequest): MessageResponse {
+        let error = `<ol> ${errors.map(error => `<li>${error}</li>`)} </ol>`
+
+        return new MessageResponse(messageRequest.channelId,
+            messageRequest.chatId,
+            messageRequest.message,
+            error,
+            true);
 
     }
 }

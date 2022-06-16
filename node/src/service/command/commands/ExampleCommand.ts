@@ -12,7 +12,8 @@ export class ExampleCommand implements CommandResolver {
         return new MessageResponse(messageRequest.channelId,
             messageRequest.chatId,
             messageRequest.message,
-            "<h1>test</h1>");
+            "<h1>test</h1>",
+            false);
     }
 
     validate(messageRequest: MessageRequest): string[] {

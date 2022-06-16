@@ -11,14 +11,14 @@ export class CommandController {
         this.commandService = commandService;
     }
 
-    public async post(req: express.Request, res: express.Response): Promise<void> {
+    public post(req: express.Request, res: express.Response) {
 
         const messageResponse = this.commandService.handle(req.body as MessageRequest);
 
         res.json(messageResponse);
     }
 
-    public async register(req: express.Request, res: express.Response): Promise<void> {
+    public register(req: express.Request, res: express.Response) {
 
         res.json(this.commandService.register())
     }

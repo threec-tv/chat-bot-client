@@ -12,14 +12,17 @@ export class CommandController {
     }
 
     public post(req: express.Request, res: express.Response) {
-
         const messageResponse = this.commandService.handle(req.body as MessageRequest);
 
         res.json(messageResponse);
     }
 
     public register(req: express.Request, res: express.Response) {
-
         res.json(this.commandService.register())
+    }
+
+    validate(req: express.Request, res: express.Response) {
+        let strings = this.commandService.validate(req.body as MessageRequest);
+        res.json(strings);
     }
 }

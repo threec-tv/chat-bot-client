@@ -10,6 +10,10 @@ router.post('/v1/command/handler', (req, res) => {
     commandController.post(req, res);
 });
 
+router.post('/v1/command/validate', (req, res) => {
+    commandController.validate(req, res);
+});
+
 router.get('/v1/command/register', (req, res) => {
     commandController.register(req, res)
 })

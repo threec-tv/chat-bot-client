@@ -2,22 +2,22 @@ import {MessageResponse} from "~/types/MessageResponse";
 import {MessageRequest} from "~/types/MessageRequest";
 import {CommandResolver} from "~/service/command/CommandResolver";
 
-export class ExampleCommand implements CommandResolver {
+export class AnotherCommandWithValidationFailure implements CommandResolver {
 
     commandName(): string {
-        return "/example";
+        return "/validationFail";
     }
 
     handle(messageRequest: MessageRequest): MessageResponse {
         return new MessageResponse(messageRequest.channelId,
             messageRequest.chatId,
             messageRequest.message,
-            "<h1>example command resolved</h1>",
+            "<h1>you shouldnt see me. </h1>",
             false);
     }
 
     validate(messageRequest: MessageRequest): string[] {
-        return [];
+        return ['validation failure', 'nuu uhh'];
     }
 
 }

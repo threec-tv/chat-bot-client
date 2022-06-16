@@ -6,7 +6,7 @@
   "scripts": {
     "chat-bot:start": "NODE_PATH=./build node build/index.js",
     "chat-bot:build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "chat-bot:dev": "nodemon -r tsconfig-paths/register src/index.ts dev",
+    "chat-bot:dev": "nodemon -r tsconfig-paths/register src/index.ts",
     "clean": "rm -rf dist",
     "chat-bot:test": "mocha --config ./mocharc.jsonc"
   },

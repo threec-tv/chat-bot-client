@@ -2,13 +2,11 @@
     "compilerOptions": {
         "module": "commonjs",
         "esModuleInterop": true,
-        "target": "es6",
+        "target": "esnext",
         "noImplicitAny": true,
         "moduleResolution": "node",
         "types": [
             "reflect-metadata",
-            "mocha",
-            "chai"
         ],
         "sourceMap": true,
         "outDir": "dist",
@@ -25,6 +23,7 @@
     "compileOnSave": true,
     "include": [
         "src/**/*",
-        "test/**/*"
+        "test/**/*",
+        "node_modules/@types/jest/index.d.ts"
     ]
 }

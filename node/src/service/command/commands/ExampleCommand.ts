@@ -5,7 +5,7 @@ import {CommandResolver} from "~/service/command/CommandResolver";
 export class ExampleCommand implements CommandResolver {
 
     commandName(): string {
-        return "example";
+        return "/example";
     }
 
     handle(messageRequest: MessageRequest): MessageResponse {

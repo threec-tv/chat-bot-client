@@ -1,0 +1,8 @@
+rootProject.name = 'threeC-chat-sdk'
+
+include ':node',
+        ':java'
+
+project(':node').projectDir = new File('node')
+project(':java').projectDir = new File('java')
+

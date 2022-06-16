@@ -4,14 +4,12 @@ plugins {
 
 task build(type: NpmTask) {
   dependsOn npmInstall
-  println 'starting Front build task'
   args = ['run', 'build']
 }
 
 task clean(type: Delete) {
   println 'cleaning dist'
   delete "dist"
-  delete ".nuxt"
 }
 
 task test(type: NpmTask) {

@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { GreeterService } from '@service/greeter-service';
+import { GreeterService } from '../../../src/service/greeter-service/GreeterService';
 import { Container } from 'typescript-ioc';
 
 const greeterService = Container.get(GreeterService);

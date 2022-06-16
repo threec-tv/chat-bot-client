@@ -1,4 +1,4 @@
-import { GreeterService } from '../../service/greeter-service/GreeterService';
+import { GreeterService } from '~/service/greeter-service/GreeterService'
 import express from 'express';
 import { Inject } from 'typescript-ioc';
 

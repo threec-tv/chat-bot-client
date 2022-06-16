@@ -1,6 +1,6 @@
 import 'module-alias/register';
 import express from 'express';
-import { greeterRouter } from 'controllers/greeter/greeter-router';
+import { greeterRouter } from '~/controllers/greeter/greeter-router'
 
 const app = express();
 const port = 8000; // default port to listen

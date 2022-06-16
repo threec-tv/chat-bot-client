@@ -1,6 +1,6 @@
 import {MessageResponse} from "~/types/MessageResponse";
 import {MessageRequest} from "~/types/MessageRequest";
-import {ExampleCommand} from "~/service/command/ExampleCommand";
+import {ExampleCommand} from "~/service/command/commands/ExampleCommand";
 import {CommandHelper} from "~/service/command/CommandHelper";
 
 export class CommandService {
@@ -31,7 +31,6 @@ export class CommandService {
     }
 
     register() {
-        const commands = this.commands.map(value => value.commandName());
-        return commands
+        return this.commands.map(value => value.commandName())
     }
 }

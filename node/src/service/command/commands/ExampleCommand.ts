@@ -9,7 +9,10 @@ export class ExampleCommand implements CommandResolver {
     }
 
     handle(messageRequest: MessageRequest): MessageResponse {
-        return null as unknown as MessageResponse;
+        return new MessageResponse(messageRequest.channelId,
+            messageRequest.chatId,
+            messageRequest.message,
+            "<h1>test</h1>");
     }
 
     validate(messageRequest: MessageRequest): string[] {

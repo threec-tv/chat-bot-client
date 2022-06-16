@@ -1,8 +1,11 @@
 import {MessageResponse} from "~/types/MessageResponse";
 
 export class CommandHelper {
+
     static splitCommand(fullCommand: string): string[] {
-        return [];
+        // example arg1 arg2
+
+        return fullCommand.split(' ');
     }
 
     static validationError(errors: string[]): MessageResponse {

@@ -1,6 +1,4 @@
 import {CommandService} from '~/service/command/CommandService';
-import {Container} from 'typescript-ioc';
-import {tests} from "tsconfig-paths/lib/__tests__/data/match-path-data";
 import {MessageRequest} from "~/types/MessageRequest";
 import {TestCommand} from "~/__tests__/service/command/commands/TestCommand";
 import {ValidationFailTestCommand} from "~/__tests__/service/command/commands/ValidationFailTestCommand";
@@ -44,6 +42,5 @@ describe('Command Service Tests', () => {
             expect(messageResponse.parsedMessage).toStrictEqual('<ol> <li>Normally I should do logic</li> </ol>')
         });
     });
-
 
 });

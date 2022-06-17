@@ -15,4 +15,12 @@ export class ValidationFailTestCommand implements CommandResolver {
         return ['Normally I should do logic'];
     }
 
+    helpText(): string {
+        return "";
+    }
+
+    helpTextEnabled(): boolean {
+        return false;
+    }
+
 }

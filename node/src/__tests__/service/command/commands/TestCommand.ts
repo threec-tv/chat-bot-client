@@ -15,4 +15,12 @@ export class TestCommand implements CommandResolver {
         return [];
     }
 
+    helpText(): string {
+        return "";
+    }
+
+    helpTextEnabled(): boolean {
+        return false;
+    }
+
 }

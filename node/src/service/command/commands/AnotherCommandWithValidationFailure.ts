@@ -20,5 +20,13 @@ export class AnotherCommandWithValidationFailure implements CommandResolver {
         return ['validation failure', 'nuu uhh'];
     }
 
+    helpText(): string {
+        return "validation help text";
+    }
+
+    helpTextEnabled(): boolean {
+        return false;
+    }
+
 }
 

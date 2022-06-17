@@ -20,5 +20,13 @@ export class ExampleCommand implements CommandResolver {
         return [];
     }
 
+    helpText(): string {
+        return "example help text";
+    }
+
+    helpTextEnabled(): boolean {
+        return true;
+    }
+
 }
 

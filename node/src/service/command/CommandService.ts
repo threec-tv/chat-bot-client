@@ -4,6 +4,7 @@ import {ExampleCommand} from "~/service/command/commands/ExampleCommand";
 import {CommandHelper} from "~/service/command/CommandHelper";
 import {CommandResolver} from "~/service/command/CommandResolver";
 import {AnotherCommandWithValidationFailure} from "~/service/command/commands/AnotherCommandWithValidationFailure";
+import {RegisterResponse} from "~/types/RegisterResponse";
 
 export class CommandService {
 
@@ -36,8 +37,15 @@ export class CommandService {
         return [];
     }
 
-    register() {
-        return this._commands.map(value => value.commandName())
+    register(): RegisterResponse[] {
+        return this._commands.map(value => {
+            let newVar: RegisterResponse = {
+                commandName: value.commandName(),
+                helpText: value.helpText(),
+                helpTextEnabled: value.helpTextEnabled()
+            };
+            return newVar;
+        })
     }
 
     private findCommand(messageRequest: MessageRequest) {

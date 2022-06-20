@@ -1,12 +1,23 @@
 import {MessageResponse} from "~/types/MessageResponse";
 import {MessageRequest} from "~/types/MessageRequest";
 
+export type Command = string;
+
+export type CommandArgs = Map<Command, string[]>;
+
 export class CommandHelper {
 
-    static splitCommand(fullCommand: string): string[] {
+    static splitCommand(fullCommand: string): CommandArgs {
         // example arg1 arg2
 
-        return fullCommand.split(' ');
+        if (!fullCommand)
+            return new Map<Command, string[]>();
+
+        let args = fullCommand.trim().split(' ');
+        const master: Command = args[0];
+        args.shift();
+
+        return new Map<Command, string[]>().set(master, args);
     }
 
     static validationError(errors: string[], messageRequest: MessageRequest): MessageResponse {

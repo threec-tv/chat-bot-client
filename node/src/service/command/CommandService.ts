@@ -52,7 +52,7 @@ export class CommandService {
         let commands = CommandHelper.splitCommand(messageRequest.message);
 
         return this._commands
-            .filter(command => command.commandName() === commands[0])
+            .filter(command => commands.has(command.commandName()))
             .find(value => value);
     }
 

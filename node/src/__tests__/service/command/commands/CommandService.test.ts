@@ -2,6 +2,7 @@ import {CommandService} from '~/service/command/CommandService';
 import {MessageRequest} from "~/types/MessageRequest";
 import {TestCommand} from "~/__tests__/service/command/commands/TestCommand";
 import {ValidationFailTestCommand} from "~/__tests__/service/command/commands/ValidationFailTestCommand";
+import {RegisterResponse} from "~/types/RegisterResponse";
 
 let underTest: CommandService;
 describe('Command Service Tests', () => {
@@ -15,7 +16,12 @@ describe('Command Service Tests', () => {
         test('returns registered', () => {
             const actualGreeting = underTest.register();
 
-            expect(actualGreeting).toStrictEqual([`/testCommand`]);
+            const expected: RegisterResponse = {
+                commandName: `/testCommand`,
+                helpText: '',
+                helpTextEnabled: false
+            }
+            expect(actualGreeting).toStrictEqual([expected]);
         });
 
         test('calls command when called', () => {

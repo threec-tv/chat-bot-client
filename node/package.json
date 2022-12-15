@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^2.0.16",
     "typescript-ioc": "^3.2.2"
   },
